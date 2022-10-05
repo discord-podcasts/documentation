@@ -61,7 +61,7 @@ The data bytes are split again into two different things. The nonce for the pack
 | nonce | 24 bytes | Nonce is used to decrypt the audio |
 | audio | n bytes  | Encrypted audio                    |
 
-If you received the Hello event you are ready for streaming the audio.
+If you received the [Hello event](../resources/events.md#-hello-event) you are ready for streaming the audio.
 
 1. Decrypt your received audio form Discord
 2. Encrypt the audio with the same nonce as you decrypted it from Discord and the `secretKey` from the Hello event
