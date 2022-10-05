@@ -56,10 +56,10 @@ Get a full list of events [here](../entities/events.md).
 
 The data bytes are split again into two different things. The nonce for the packet and the encrypted audio data.
 
-| Name  | Size | Description                        |
-|-------|------|------------------------------------|
-| nonce | 24   | Nonce is used to decrypt the audio |
-| audio | n    | Encrypted audio                    |
+| Name  | Size     | Description                        |
+|-------|----------|------------------------------------|
+| nonce | 24 bytes | Nonce is used to decrypt the audio |
+| audio | n bytes  | Encrypted audio                    |
 
 If you received the Hello event you are ready for streaming the audio.
 
