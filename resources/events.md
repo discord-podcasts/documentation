@@ -10,8 +10,11 @@ event. Here are all possible events.
 
 ## Hello Event
 
-This event gets received right after connecting.
+This event gets received right after connecting. It contains the `secretKey` which is used for encryption/decryption of the
+audio packet, together with the `nonce`.
 
-| Field     | Type   | Description                                       |
-|-----------|--------|---------------------------------------------------|
-| secretKey | String | The secret key, used to encrypt/decrypt the audio |
+### Structure
+
+| Field     | Type                  | Description                                       |
+|-----------|-----------------------|---------------------------------------------------|
+| secretKey | Byte array of size 32 | The secret key, used to encrypt/decrypt the audio |

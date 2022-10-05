@@ -1,4 +1,4 @@
-# Creating a podcast
+# Creating a podcast - Being the sender
 
 Being the sender requires you to be able to receive voice data by discord. Sadly this is undocumented. Some libraries do
 support it though. Use them or write your own implementation based on their projects:
@@ -25,33 +25,7 @@ isSender: true
 
 Through the socket you can receive **audio and events**. Make sure to handle both accordingly.
 
-## Packets
-
-All packets you receive contain a prefix byte, which determines whether your packet is a event or audio.
-So the packet structure will look like this.
-
-| Description                     | Size    |
-|---------------------------------|---------|
-| Is audio prefix                 | 1 byte  |
-| data   (audio or event details) | n bytes |
-
-| Type  | Byte value |
-|-------|------------|
-| Event | 0          |
-| Audio | 1          |
-
-### Events
-
-The data bytes can be decoded to a json object. Get a full list of events [here](../resources/events.md).
-
-### Audio
-
-The data bytes are split again into two different things. The nonce for the packet and the encrypted audio data.
-
-| Name  | Size     | Description                        |
-|-------|----------|------------------------------------|
-| nonce | 24 bytes | Nonce is used to decrypt the audio |
-| audio | n bytes  | Encrypted audio                    |
+## Sending audio
 
 If you received the [Hello event](../resources/events.md#hello-event) you are ready for streaming the audio.
 
