@@ -25,7 +25,7 @@ isSender: true
 
 Through the socket you can receive **audio and events**. Make sure to handle both accordingly.
 
-### Packets
+## Packets
 
 All packets you receive contain a prefix byte, which determines whether your packet is a event or audio.
 So the packet structure will look like this.
@@ -40,7 +40,7 @@ So the packet structure will look like this.
 | Event | 0          |
 | Audio | 1          |
 
-#### Events
+### Events
 
 The data bytes can be decoded to a json object. Every event contains a `type` field, which helps you to identify your event.
 Here are all possible events.
@@ -50,13 +50,9 @@ Here are all possible events.
 | Hello      | 0          |
 | Disconnect | 1          |
 
-##### Hello Event
+Get a full list of events [here](../entities/events.md).
 
-| Field     | Type   | Description                               |
-|-----------|--------|-------------------------------------------|
-| secretKey | String | The secret key, used to encrypt the audio |
-
-#### Audio
+### Audio
 
 The data bytes are split again into two different things. The nonce for the packet and the encrypted audio data.
 
