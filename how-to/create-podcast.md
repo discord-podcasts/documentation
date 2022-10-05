@@ -33,7 +33,7 @@ So the packet structure will look like this.
 | Description                     | Size    |
 |---------------------------------|---------|
 | Is audio prefix                 | 1 byte  |
-| data   (audio or event details) | m bytes |
+| data   (audio or event details) | n bytes |
 
 | Type  | Byte value |
 |-------|------------|
