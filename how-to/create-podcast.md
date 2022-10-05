@@ -1,5 +1,11 @@
 # Creating a podcast
 
+Being the sender requires you to be able to receive voice data by discord. Sadly this is undocumented. Some libraries do
+support it though. Use them or write your own implementation based on their projects:
+
+* [Kord](https://github.com/kordlib/kord)
+* [Pycord](https://github.com/Pycord-Development/pycord)
+
 In order to create your own podcast, where you can stream to you have to get the connection details of a websocket. This can
 be done by requesting a podcast creation.
 
@@ -44,6 +50,12 @@ Here are all possible events.
 | Hello      | 0          |
 | Disconnect | 1          |
 
+##### Hello Event
+
+| Field     | Type   | Description                               |
+|-----------|--------|-------------------------------------------|
+| secretKey | String | The secret key, used to encrypt the audio |
+
 #### Audio
 
 The data bytes are split again into two different things. The nonce for the packet and the encrypted audio data.
@@ -52,3 +64,13 @@ The data bytes are split again into two different things. The nonce for the pack
 |-------|------|------------------------------------|
 | nonce | 24   | Nonce is used to decrypt the audio |
 | audio | n    | Encrypted audio                    |
+
+If you received the Hello event you are ready for streaming the audio.
+
+1. Decrypt your received audio form Discord
+2. Encrypt the audio with the same nonce as you decrypted it from Discord and the `secretKey` from the Hello event
+3. Create a byte array of size `audio` + 1
+4. Add the prefix byte to the array, so 1 for audio
+5. Add your encrypted audio to the byte array
+
+Finally send your bytes to the websocket. Voilà that's it!
