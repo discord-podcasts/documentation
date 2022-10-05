@@ -2,6 +2,8 @@
 
 ## Hello Event
 
-| Field     | Type   | Description                               |
-|-----------|--------|-------------------------------------------|
-| secretKey | String | The secret key, used to encrypt the audio |
+This event gets received right after connecting.
+
+| Field     | Type   | Description                                       |
+|-----------|--------|---------------------------------------------------|
+| secretKey | String | The secret key, used to encrypt/decrypt the audio |
