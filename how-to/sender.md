@@ -42,15 +42,7 @@ So the packet structure will look like this.
 
 ### Events
 
-The data bytes can be decoded to a json object. Every event contains a `type` field, which helps you to identify your event.
-Here are all possible events.
-
-| Event      | identifier |
-|------------|------------|
-| Hello      | 0          |
-| Disconnect | 1          |
-
-Get a full list of events [here](../resources/events.md).
+The data bytes can be decoded to a json object. Get a full list of events [here](../resources/events.md).
 
 ### Audio
 
