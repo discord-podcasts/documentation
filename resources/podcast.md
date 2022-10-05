@@ -5,20 +5,18 @@
 | Field       | Type    | Description                                         |
 |-------------|---------|-----------------------------------------------------|
 | id          | String  | Unique ID of the podcast                            |
-| port        | Integer | Port of websocket                                   |
-| ip          | String  | Ip of websocket                                     |
 | activeSince | Long?   | Timestamp since when the podcast is active or null* |
 
 \* Can be null if the sender hasn't connected yet
 
-## GET /podcast?id={id}
+### GET /podcast?id={id}
 
 Returns a [podcast](#structure) matching the id.
 
-## GET /list
+### GET /list
 
 Returns a json array with all active [podcasts](#structure).
 
-## POST /podcast
+### POST /podcast
 
 Creates a new podcast to connect to. Returns the newly created [podcast](#structure).

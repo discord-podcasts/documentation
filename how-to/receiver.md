@@ -1,8 +1,12 @@
 # Listening to a podcast - Being the receiver
 
-For a receiver to connect to a podcast you the podcasts object. This can be given by the [list] endpoint or [podcast]
-endpoint.  
-Once you have the podcast object you can connect to the websocket with the provided ip and port.
+For a receiver to connect to a podcast you need the id of the podcast. You don't have a podcast id yet? Check out all active
+podcasts with the [list](../resources/podcast.md#get-list) endpoint!  
+Once you have the podcast id you can connect to the websocket:
+```
+wss://podcasts.myra.bot?id={id}
+```
+Make sure to put your podcast id in the placeholder.
 
 ## Socket connection
 
