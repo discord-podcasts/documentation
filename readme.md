@@ -11,5 +11,5 @@ It's used for a podcast like feature in Discord, where a single guild can stream
 
 ## Where to start
 Check out on
-* [How to create a podcast (As sender)](/how-to/create-podcast.md)
-* [How to listen to a podcast (As receiver)](/how-to/listen-podcast.md)
+* [How to create a podcast (As sender)](/how-to/sender.md)
+* [How to listen to a podcast (As receiver)](/how-to/receiver.md)

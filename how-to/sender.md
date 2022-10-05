@@ -11,7 +11,7 @@ be done by requesting a podcast creation.
 
 ### Create podcast - POST /podcast
 
-This will response with a [podcast object](../entities/podcast.md) which contains all information about the socket.
+This will response with a [podcast object](../resources/podcast.md) which contains all information about the socket.
 
 ## Socket connection
 
@@ -50,7 +50,7 @@ Here are all possible events.
 | Hello      | 0          |
 | Disconnect | 1          |
 
-Get a full list of events [here](../entities/events.md).
+Get a full list of events [here](../resources/events.md).
 
 ### Audio
 
