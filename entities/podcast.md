@@ -9,5 +9,5 @@
 | ip          | String  | Ip of websocket                                     |
 | activeSince | Long?   | Timestamp since when the podcast is active or null* |
 
-\* Can be null if the sender didn't connect yet
+\* Can be null if the sender hasn't connected yet
 
