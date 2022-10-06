@@ -19,7 +19,8 @@ your [Hello Event](../resources/events.md#hello-event) and your saved `nonce`. T
 
 ## Disconnecting
 
-If you want to disconnect just close your connection with any close code.
+If you want to disconnect just close your connection with any close code.  
+You can also get disconnect though. For this check out [the disconnect close codes](../resources/socket.md#disconencts).
 
 ## Reconnecting
 
