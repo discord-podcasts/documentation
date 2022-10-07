@@ -1,7 +1,16 @@
 # Events
 
-Every event contains an integer `type` field, which helps you to identify your event. This field is guaranteed to be in every
-event. Here are all possible events.
+The event bytes can be read as a json object.
+
+### Structure
+
+| Field   | Type        | Description         |
+|---------|-------------|---------------------|
+| type    | Integer     | Event identifier    |
+| content | Json object | Event specific data |
+
+
+The `type` field tells you what event you received. Here are all possible events.
 
 | Event      | identifier |
 |------------|------------|
