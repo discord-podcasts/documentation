@@ -1,6 +1,6 @@
 # Webscoket
 
-## Disconencts
+## Disconnects
 
 You as a receiver and sender can get disconnected. All known reasons are listen below.
 
