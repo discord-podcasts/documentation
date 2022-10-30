@@ -14,15 +14,21 @@ In order to stream your audio you have to request a podcast. This can be done by
 
 Now that you have all the data you can connect to the websocket. Avoid waiting a long time because podcasts have a timeout.
 If no sender connects in a given time your podcast gets closed.  
-Connect to the socket and provide the `isSender` header:
+Connect to the socket and provide
+* The podcast id as a query parameter
+* A `clientId` header with your client id
+* A `token` header with your token
+* A`isHost` header
 
 ```
 wss://podcasts.myra.bot?id={id}
 
-isSender: true
+clientId: 012345
+token: ab12?!
+isHost: true
 ```
 
-Through the socket you can receive **audio and events**. Make sure to handle both accordingly. Read more about the incoming packets [here](../resources/packet.md).
+Through the websocket you only receive events.
 
 ## Sending audio
 
