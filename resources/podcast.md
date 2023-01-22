@@ -16,8 +16,8 @@ Returns a [podcast](#structure) matching the id.
 
 ### GET /list
 
-Returns a json array with all active [podcasts](#structure).
+Returns an object with all [podcasts](#structure).
 
-### POST /podcast
-
-Creates a new podcast to connect to. Returns the newly created [podcast](#structure).
+| Field    | Type                    | Description  |
+|----------|-------------------------|--------------|
+| podcasts | [Podcast](#structure)[] | All podcasts |
