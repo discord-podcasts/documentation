@@ -34,3 +34,18 @@ Once connected to the UDP socket, you have to send a `Connected` event:
 | port  | u16    | The port of your UDP client |
 
 After you've sent this data you're ready to [receive/send audio](audio.md)!
+
+## Events
+
+After sending the Connected Event you can receive events.  
+Each event has a matching event type code which are listed here.
+
+| Code | Event        |
+|------|--------------|
+| 1    | Hello        |
+| 2    | Connected    |
+| 3    | Disconnected |
+| 4    | ClientJoin   |
+| 5    | End          |
+
+ill add the event payloads later sry
