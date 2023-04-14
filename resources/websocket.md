@@ -13,6 +13,33 @@ Host your own podcast.
 
 ## Lifecycle
 
+Connect to the websocket and await the [Hello Event](#hello). This event provides the information to connect to the audio
+socket. Connect to the audio socket and send a [Connected event](#connected). Once you've sent this you will receive
+a [Client Join Event](#client-connect), which shows that you managed to connect successfully to both the websocket and the
+udp
+server.  
+Now you're ready to [receive/send audio](audio.md)!
+
+## Events
+
+After sending the Connected Event you can receive events.  
+Each event has a matching event type code which are listed here.
+
+| Code | Event        |
+|------|--------------|
+| 1    | Hello        |
+| 2    | Connected    |
+| 3    | Disconnected |
+| 4    | ClientJoin   |
+| 5    | End          |
+
+Events are structured like so:
+
+| Field | Type   | Description                                                      |
+|-------|--------|------------------------------------------------------------------|
+| t     | u16    | The event code                                                   |
+| data  | Object | Event data, this depends on the event itself and is listed below |
+
 ### Hello
 
 Once you connect you will receive a `Hello` event:
@@ -33,19 +60,23 @@ Once connected to the UDP socket, you have to send a `Connected` event:
 | ip    | String | Your remote ip              |
 | port  | u16    | The port of your UDP client |
 
-After you've sent this data you're ready to [receive/send audio](audio.md)!
+### Client Disconnect
 
-## Events
+This event gets send after a client disconnected from the websocket.
 
-After sending the Connected Event you can receive events.  
-Each event has a matching event type code which are listed here.
+| Field     | Type | Description                            |
+|-----------|------|----------------------------------------|
+| client_id | u32  | The client id of the client which left |
 
-| Code | Event        |
-|------|--------------|
-| 1    | Hello        |
-| 2    | Connected    |
-| 3    | Disconnected |
-| 4    | ClientJoin   |
-| 5    | End          |
+### Client Connect
 
-ill add the event payloads later sry
+This event gets send when a new client starts connected to the podcasts audio socket.
+
+| Field     | Type | Description                              |
+|-----------|------|------------------------------------------|
+| client_id | u32  | The Client id of the newly joined client |
+
+### End
+
+This event gets send when the host leaves the podcast. With this the podcasts ends.  
+The payload is an empty object.
