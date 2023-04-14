@@ -60,6 +60,9 @@ Once connected to the UDP socket, you have to send a `Connected` event:
 | ip    | String | Your remote ip              |
 | port  | u16    | The port of your UDP client |
 
+> **Note**: Discord needs your ip as well, so the Discord API wrappers will do some sort of Ip discovery too. If you have
+> trouble finding out your Ip, just use the one your Discord API wrapper provides.
+
 ### Client Disconnect
 
 This event gets send after a client disconnected from the websocket.
