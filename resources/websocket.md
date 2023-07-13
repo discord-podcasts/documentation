@@ -35,10 +35,10 @@ Each event has a matching event type code which are listed here.
 
 Events are structured like so:
 
-| Field | Type   | Description                                                      |
-|-------|--------|------------------------------------------------------------------|
-| t     | u16    | The event code                                                   |
-| data  | Object | Event data, this depends on the event itself and is listed below |
+| Field | Type        | Description                                                      |
+|-------|-------------|------------------------------------------------------------------|
+| t     | u16 | The event code                                                   |
+| data  | Object      | Event data, this depends on the event itself and is listed below |
 
 ### Hello
 
@@ -49,7 +49,7 @@ Once you connect you will receive a `Hello` event:
 | podcast_id | u32      | The id of the connected podcast                |
 | ip         | String   | Ip address of UDP socket                       |
 | port       | u16      | The port of the UDP socket                     |
-| secret     | Array u8 | 32 byte array for encryption/decryption secret |
+| secret     | i8 array | 32 byte array for encryption/decryption secret |
 
 Use this payload to connect to the udp socket. For this use the provided port.
 

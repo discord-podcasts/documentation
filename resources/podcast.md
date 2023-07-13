@@ -2,11 +2,11 @@
 
 ### Structure
 
-| Field        | Type    | Description                                         |
-|--------------|---------|-----------------------------------------------------|
-| id           | Integer | Unique ID of the podcast                            |
-| host         | String  | Client id of the host                               |
-| active_since | Long?   | Timestamp since when the podcast is active or null* |
+| Field        | Type  | Description                                         |
+|--------------|-------|-----------------------------------------------------|
+| id           | u32   | Unique ID of the podcast                            |
+| host         | u64   | Client id of the host                               |
+| active_since | u128? | Timestamp since when the podcast is active or null* |
 
 \* Can be null if the sender hasn't connected yet
 
