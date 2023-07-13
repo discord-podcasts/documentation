@@ -44,11 +44,12 @@ Events are structured like so:
 
 Once you connect you will receive a `Hello` event:
 
-| Field      | Type   | Description                     |
-|------------|--------|---------------------------------|
-| podcast_id | u32    | The id of the connected podcast |
-| ip         | String | Ip address of UDP socket        |
-| port       | u16    | The port of the UDP socket      |
+| Field      | Type     | Description                                    |
+|------------|----------|------------------------------------------------|
+| podcast_id | u32      | The id of the connected podcast                |
+| ip         | String   | Ip address of UDP socket                       |
+| port       | u16      | The port of the UDP socket                     |
+| secret     | Array u8 | 32 byte array for encryption/decryption secret |
 
 Use this payload to connect to the udp socket. For this use the provided port.
 
